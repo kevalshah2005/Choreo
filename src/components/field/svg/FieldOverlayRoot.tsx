@@ -33,6 +33,8 @@ import FieldConstraintDisplayLayer from "./constraintDisplay/FieldConstraintDisp
 import FieldImage2025 from "./fields/FieldImage2025";
 import * as FieldDimensions from "./fields/FieldDimensions";
 
+const FIELD_IMAGE = "/vex_push_back_field_regular.png";
+
 type Props = object;
 
 type State = {
@@ -241,6 +243,11 @@ class FieldOverlayRoot extends Component<Props, State> {
             {layers[ViewLayers.Field] && (
               <>
                 <FieldImage2025 />
+                <image
+                  href={FIELD_IMAGE}
+                  width={FieldDimensions.FIELD_LENGTH}
+                  height={FieldDimensions.FIELD_WIDTH}
+                />
               </>
             )}
             {layers[ViewLayers.Grid] && <FieldGrid></FieldGrid>}

@@ -5,6 +5,6 @@
 #include <units/length.h>
 
 namespace choreo::util {
-static constexpr units::meter_t fieldLength = 17.548_m;
-static constexpr units::meter_t fieldWidth = 8.052_m;
+static constexpr units::meter_t fieldLength = 3.6576_m;
+static constexpr units::meter_t fieldWidth = 3.6576_m;
 }  // namespace choreo::util
