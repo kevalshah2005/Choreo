@@ -42,7 +42,7 @@ if(BUILD_TESTING)
     FetchContent_Declare(
         Catch2
         GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-        GIT_TAG v3.12.0
+        GIT_TAG v3.13.0
         GIT_SHALLOW ON
         EXCLUDE_FROM_ALL
         SYSTEM
@@ -59,7 +59,7 @@ set(BUILD_EXAMPLES OFF)
 FetchContent_Declare(
     Sleipnir
     GIT_REPOSITORY https://github.com/SleipnirGroup/Sleipnir
-    GIT_TAG v0.3.4
+    GIT_TAG v0.4.0
     GIT_SHALLOW ON
     SYSTEM
 )
