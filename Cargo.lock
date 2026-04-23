@@ -534,7 +534,26 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "613afe47fcd5fac7ccf1db93babcb082c5994d996f20b8b159f2ad1658eb5724"
 
 [[package]]
-name = "choreo"
+name = "choreo-core"
+version = "2026.0.2"
+dependencies = [
+ "dashmap",
+ "fastrand",
+ "futures-util",
+ "ipc-channel",
+ "regex",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "thiserror 2.0.17",
+ "tokio",
+ "tracing",
+ "trajoptlib",
+ "zip",
+]
+
+[[package]]
+name = "choreo-vex"
 version = "2026.0.2"
 dependencies = [
  "base64 0.22.1",
@@ -560,32 +579,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "choreo-cli"
+name = "choreo-vex-cli"
 version = "2026.0.2"
 dependencies = [
  "choreo-core",
  "clap",
  "tracing",
  "tracing-subscriber",
-]
-
-[[package]]
-name = "choreo-core"
-version = "2026.0.2"
-dependencies = [
- "dashmap",
- "fastrand",
- "futures-util",
- "ipc-channel",
- "regex",
- "serde",
- "serde_json",
- "tempfile",
- "thiserror 2.0.17",
- "tokio",
- "tracing",
- "trajoptlib",
- "zip",
 ]
 
 [[package]]
