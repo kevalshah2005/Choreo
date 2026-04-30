@@ -1,6 +1,6 @@
 {
   "game": "Rebuilt",
-  "field-image": "/vex_push_back_field_regular.png",
+  "field-image": "/2027_vex_field.png",
   "field-corners": {
     "top-left": [
       256,
@@ -21,7 +21,7 @@
     2035
   ],
   "origin-fraction": [
-    0,
-    0
+    0.01246,
+    0.01246
   ]
 }
