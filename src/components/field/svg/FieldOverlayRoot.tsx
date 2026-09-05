@@ -34,7 +34,7 @@ import FieldConstraintDisplayLayer from "./constraintDisplay/FieldConstraintDisp
 import * as FieldDimensions from "./fields/FieldDimensions";
 
 const FIELD_IMAGE = "/2027_vex_field.png";
-// Offset to align the field image with the coordinate system, in meters. Calculated based on trial and error to make bottom left corner of the field image align with (0, 0) in the coordinate system.
+// Offset to align the field image with the coordinate system, in meters. Calculated based on trial and error to make the center of the field image align with (0, 0) in the coordinate system.
 const FIELD_IMAGE_OFFSET_M = {
   x: 0.45 - 1.778,
   y: 0.5525 + 1.778
