@@ -34,9 +34,10 @@ import FieldConstraintDisplayLayer from "./constraintDisplay/FieldConstraintDisp
 import * as FieldDimensions from "./fields/FieldDimensions";
 
 const FIELD_IMAGE = "/2027_vex_field.png";
-const FIELD_IMAGE_OFFSET_M = { // offset to align the field image with the coordinate system, in meters
-  x: -0.045593,
-  y: -0.045593
+// Offset to align the field image with the coordinate system, in meters. Calculated based on trial and error to make bottom left corner of the field image align with (0, 0) in the coordinate system.
+const FIELD_IMAGE_OFFSET_M = {
+  x: 0.45 - 1.778,
+  y: 0.5525 + 1.778
 };
 
 type Props = object;
@@ -247,14 +248,15 @@ class FieldOverlayRoot extends Component<Props, State> {
                 <g
                   transform={`scale(1 -1) translate(-0.5, ${-FieldDimensions.FIELD_WIDTH - 0.5})`}
                 >
+                  <image
+                    href={FIELD_IMAGE}
+                    x={FIELD_IMAGE_OFFSET_M.x}
+                    y={FIELD_IMAGE_OFFSET_M.y}
+                    width={FieldDimensions.FIELD_LENGTH}
+                    height={FieldDimensions.FIELD_WIDTH}
+                  />
                 </g>
-                <image
-                  href={FIELD_IMAGE}
-                  x={FIELD_IMAGE_OFFSET_M.x}
-                  y={FIELD_IMAGE_OFFSET_M.y}
-                  width={FieldDimensions.FIELD_LENGTH}
-                  height={FieldDimensions.FIELD_WIDTH}
-                />
+
               </>
             )}
             {layers[ViewLayers.Grid] && <FieldGrid></FieldGrid>}
