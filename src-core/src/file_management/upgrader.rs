@@ -59,11 +59,8 @@ impl Editor {
     pub fn get_path_raw(&self, path: impl JsonPath) -> Option<&JsonValue> {
         let mut jdata = &self.jdata;
         for key in path.try_as_json_path()? {
-            if let Some(value) = jdata.get(key) {
-                jdata = value;
-            } else {
-                return None;
-            }
+            let value = jdata.get(key)?;
+            jdata = value;
         }
         Some(jdata)
     }
@@ -173,7 +170,7 @@ impl Upgrader {
             ));
         }
         let mut editor = Editor::new(jdata);
-        for action in &self.actions[version as usize..] {
+        for action in &self.actions[version..] {
             action.upgrade(&mut editor)?;
         }
         editor.set_path("version", self.current_version)?;
